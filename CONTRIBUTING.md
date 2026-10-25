@@ -124,6 +124,15 @@ If you run into bugs or want to suggest an improvement:
 We follow the WordPress Community Code of Conduct.
 Be respectful and inclusive in all your interactions.
 
+## WordPress.org plugin page
+
+The readme and the assets in `.wordpress-org/` are not published automatically. To update them between releases:
+1. Merge the change to `dev/main`.
+2. Run the **WordPress.org plugin page** workflow from `dev/main` with `DRY_RUN` on (the default), and review the SVN changes and the readme diff in the run summary.
+3. Run it again with `DRY_RUN` off to publish.
+
+`SYNC_README` and `SYNC_ASSETS` select what gets synced. The readme goes to the `Stable tag` and to trunk, and `.wordpress-org/` is mirrored to SVN `/assets`, so files removed from Git are removed from WordPress.org too.
+
 ---
 
 Thanks for helping improve MultiSyde! ❤️
